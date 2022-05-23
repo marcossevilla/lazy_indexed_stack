@@ -1,0 +1,23 @@
+name: example
+description: A example project for `package:lazy_indexed_stack`.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.4
+  flutter:
+    sdk: flutter
+  lazy_indexed_stack:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^3.0.0
+
+flutter:
+  uses-material-design: true
