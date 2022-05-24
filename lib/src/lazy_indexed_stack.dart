@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 
 /// {@template lazy_indexed_stack}
-/// A Very Good Project created by Very Good CLI.
+/// A widget that displays a [IndexedStack] with lazy loaded children.
 /// {@endtemplate}
 class LazyIndexedStack extends StatefulWidget {
   /// {@macro lazy_indexed_stack}
   const LazyIndexedStack({
     super.key,
+    this.index = 0,
+    this.children = const <Widget>[],
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.sizing = StackFit.loose,
-    this.index = 0,
-    this.children = const <Widget>[],
   });
 
+  /// The index of the child to display.
   final int? index;
+
+  /// The list of children that can be displayed.
   final List<Widget> children;
+
+  /// How to align the children in the stack.
   final AlignmentGeometry alignment;
+
+  /// The direction to use for resolving [alignment].
   final TextDirection? textDirection;
+
+  /// How to size the non-positioned children in the stack.
   final StackFit sizing;
 
   @override
@@ -45,7 +54,7 @@ class _LazyIndexedStackState extends State<LazyIndexedStack> {
   }
 
   List<Widget> get children {
-    return List<Widget>.generate(
+    return List.generate(
       widget.children.length,
       (i) => _activatedList[i] ? widget.children[i] : const SizedBox.shrink(),
     );

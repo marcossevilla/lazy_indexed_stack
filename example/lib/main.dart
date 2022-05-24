@@ -5,7 +5,11 @@ void main() {
   runApp(const ExampleApp());
 }
 
+/// {@template example_app}
+/// A simple example app that shows how to use [LazyIndexedStack].
+/// {@endtemplate}
 class ExampleApp extends StatelessWidget {
+  /// {@macro example_app}
   const ExampleApp({super.key});
 
   // This widget is the root of your application.
@@ -18,13 +22,13 @@ class ExampleApp extends StatelessWidget {
   }
 }
 
-/// {@template my_home_page}
+/// {@template example_home_page}
 /// This widget is the home page of your application. It is stateful, meaning
 /// that it has a State object (defined below) that contains fields that affect
 /// how it looks.
 /// {@endtemplate}
 class ExampleHomePage extends StatefulWidget {
-  /// {@macro my_home_page}
+  /// {@macro example_home_page}
   const ExampleHomePage({super.key, required this.title});
 
   /// This class is the configuration for the state.
@@ -55,7 +59,7 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
           Expanded(
             child: LazyIndexedStack(
               index: index,
-              children: List.generate(3, ExamplePage.new),
+              children: List.generate(3, (i) => ExamplePage(index: index)),
             ),
           ),
           BottomNavigationBar(
@@ -82,9 +86,15 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
   }
 }
 
+/// {@template example_page}
+/// A simple example page.
+/// {@endtemplate}
 class ExamplePage extends StatefulWidget {
-  const ExamplePage(this.index);
+  /// {@macro example_page}
+  const ExamplePage({super.key, required this.index});
 
+  /// The index of the page.
+  /// Used to determine which page is being displayed.
   final int index;
 
   @override
