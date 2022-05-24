@@ -1,6 +1,6 @@
 # example
 
-A new Flutter project.
+A example project for `package:lazy_indexed_stack`.
 
 ## Getting Started
 
