@@ -1,0 +1,26 @@
+name: example
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    paths:
+      - "example"
+      - ".github/workflows/example.yaml"
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "example"
+      - ".github/workflows/example.yaml"
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_version: 3.0.0
+      working_directory: example
