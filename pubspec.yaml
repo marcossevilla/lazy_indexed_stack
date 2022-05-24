@@ -1,6 +1,6 @@
 name: lazy_indexed_stack
-description: A Very Good Project created by Very Good CLI.
-version: 1.0.0+1
+description: A Flutter package that exposes a `IndexedStack` that can be lazily loaded.
+version: 0.0.1+1
 publish_to: none
 
 environment:

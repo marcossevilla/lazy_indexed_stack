@@ -59,7 +59,7 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
           Expanded(
             child: LazyIndexedStack(
               index: index,
-              children: List.generate(3, (i) => ExamplePage(index: index)),
+              children: List.generate(3, (i) => ExamplePage(index: i)),
             ),
           ),
           BottomNavigationBar(

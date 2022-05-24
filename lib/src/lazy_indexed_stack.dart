@@ -34,7 +34,7 @@ class LazyIndexedStack extends StatefulWidget {
 }
 
 class _LazyIndexedStackState extends State<LazyIndexedStack> {
-  late final List<bool> _activatedList = List<bool>.generate(
+  late final _activatedList = List.generate(
     widget.children.length,
     (i) => i == widget.index,
   );
