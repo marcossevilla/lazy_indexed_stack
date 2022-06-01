@@ -8,20 +8,24 @@ class ExampleApp extends StatelessWidget {
   /// {@macro example_app}
   const ExampleApp({super.key});
 
+  /// Title of the app.
+  static const title = 'LazyIndexedStack';
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'LazyIndexedStack',
-      home: ExampleHomePage(title: 'LazyIndexedStack'),
+      title: title,
+      home: ExampleHomePage(title: title),
     );
   }
 }
 
 /// {@template example_home_page}
-/// This widget is the home page of your application. It is stateful, meaning
-/// that it has a State object (defined below) that contains fields that affect
-/// how it looks.
+/// This widget is the home page of your application.
+///
+/// It is stateful, meaning that it has a State object (defined below)
+/// that contains fields that affect how it looks.
 /// {@endtemplate}
 class ExampleHomePage extends StatefulWidget {
   /// {@macro example_home_page}
@@ -29,10 +33,10 @@ class ExampleHomePage extends StatefulWidget {
 
   /// This class is the configuration for the state.
   /// It holds the values (in this case the title)
-  /// provided by the parent (in this case the App widget)
+  /// provided by the parent (in this case the [ExampleApp] widget)
   /// and used by the build method of the State.
   ///
-  /// Fields in a Widget subclass are always marked "final".
+  /// Fields in a [Widget] subclass are always marked `final`.
   final String title;
 
   @override
@@ -90,6 +94,7 @@ class ExamplePage extends StatefulWidget {
   const ExamplePage({super.key, required this.index});
 
   /// The index of the page.
+  ///
   /// Used to determine which page is being displayed.
   final int index;
 
@@ -106,7 +111,7 @@ class _ExamplePageState extends State<ExamplePage> {
   @override
   void initState() {
     super.initState();
-    Future<void>.delayed(
+    Future.delayed(
       ExamplePage.displayTimeDelay,
       () {
         if (mounted) {
@@ -134,7 +139,9 @@ class _ExamplePageState extends State<ExamplePage> {
         if (_displayTime == null)
           const Spacer()
         else
-          Expanded(child: Text('initState() ran at $_displayTime')),
+          Expanded(
+            child: Text('initState() ran at $_displayTime'),
+          ),
       ],
     );
   }

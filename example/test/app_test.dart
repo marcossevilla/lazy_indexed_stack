@@ -18,15 +18,18 @@ void main() {
   group('ExampleHomePage', () {
     const homePageTitle = 'Example';
 
-    testWidgets('renders LazyIndexedStack', (tester) async {
-      await tester.pumpApp(const ExampleHomePage(title: homePageTitle));
-      await tester.pump(ExamplePage.displayTimeDelay);
+    testWidgets(
+      'renders LazyIndexedStack with one example page by default',
+      (tester) async {
+        await tester.pumpApp(const ExampleHomePage(title: homePageTitle));
+        await tester.pump(ExamplePage.displayTimeDelay);
 
-      expect(find.text(homePageTitle), findsOneWidget);
-      expect(find.byType(LazyIndexedStack), findsOneWidget);
-      expect(find.byType(ExamplePage), findsOneWidget);
-      expect(find.byType(BottomNavigationBar), findsOneWidget);
-    });
+        expect(find.text(homePageTitle), findsOneWidget);
+        expect(find.byType(LazyIndexedStack), findsOneWidget);
+        expect(find.byType(ExamplePage), findsOneWidget);
+        expect(find.byType(BottomNavigationBar), findsOneWidget);
+      },
+    );
 
     testWidgets('changes index and renders a new example page', (tester) async {
       await tester.pumpApp(const ExampleHomePage(title: homePageTitle));
