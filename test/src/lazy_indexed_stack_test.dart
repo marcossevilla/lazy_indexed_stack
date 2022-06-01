@@ -33,7 +33,7 @@ void main() {
     });
 
     testWidgets(
-      'changes current index and only renders correct index',
+      'changes current index and renders activated children',
       (tester) async {
         var index = 0;
         await tester.pumpApp(
@@ -54,7 +54,9 @@ void main() {
         );
         await tester.tap(find.byType(ElevatedButton));
         await tester.pump();
+        expect(find.text('page1'), findsOneWidget);
         expect(find.text('page2'), findsOneWidget);
+        expect(find.text('page3'), findsNothing);
       },
     );
   });
