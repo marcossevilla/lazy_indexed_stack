@@ -25,13 +25,12 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter_version: 3.0.0
+          flutter-version: 3.0.0
           cache: true
 
       - name: Install Dependencies
         run: |
           flutter packages get
           flutter pub global activate pana
-
       - name: Verify Pub Score
-        run: tool/verify_pub_score.sh 110
+        run: ./tool/verify_pub_score.sh 110
