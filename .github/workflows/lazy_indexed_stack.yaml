@@ -22,15 +22,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2.3.4
 
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v1.5.3
 
       - name: Install Dependencies
         run: |
           flutter packages get
           flutter pub global activate pana
-
+          
       - name: Verify Pub Score
         run: |
           PANA=$(pana . --no-warning); PANA_SCORE=$(echo $PANA | sed -n "s/.*Points: \([0-9]*\)\/\([0-9]*\)./\1\/\2/p")
