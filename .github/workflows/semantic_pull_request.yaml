@@ -1,6 +1,9 @@
 name: Semantic Pull Request
 
-on: [pull_request_target]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   semantic_pull_request:
