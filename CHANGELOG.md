@@ -1,3 +1,7 @@
+#  0.0.3
+
+- chore: rename package to `flutter_lazy_indexed_stack`
+
 #  0.0.2
 
 - docs: fix broken link in README
