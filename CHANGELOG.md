@@ -1,3 +1,9 @@
+#  0.0.2
+
+- docs: fix broken link in README
+- docs: improve README
+- ci: fix workflows
+
 # 0.0.1
 
 - ci: add workflows
