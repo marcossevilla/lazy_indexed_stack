@@ -19,6 +19,8 @@ The `LazyIndexedStack` API is the same as `IndexedStack`. A basic implementation
 
 ## Example
 
+<a href="https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart"><img src="https://raw.githubusercontent.com/marcossevilla/lazy_indexed_stack/main/art/lazy_indexed_stack.gif" height="400" width="250"/></a>
+
 ```dart
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -72,8 +74,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 ```
-
-<a href="https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart"><img src="https://raw.githubusercontent.com/marcossevilla/lazy_indexed_stack/main/art/infinite_list.gif" height="400"/></a>
 
 Refer to the [example][example_link] to see the usage of `LazyIndexedStack`.
 
