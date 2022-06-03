@@ -8,7 +8,7 @@ class LazyIndexedStack extends StatefulWidget {
   const LazyIndexedStack({
     super.key,
     this.index = 0,
-    this.children = const <Widget>[],
+    this.children = const [],
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.sizing = StackFit.loose,
@@ -34,10 +34,16 @@ class LazyIndexedStack extends StatefulWidget {
 }
 
 class _LazyIndexedStackState extends State<LazyIndexedStack> {
-  late final _activatedList = List.generate(
-    widget.children.length,
-    (i) => i == widget.index,
-  );
+  late final List<bool> _activatedList;
+
+  @override
+  void initState() {
+    super.initState();
+    _activatedList = List.generate(
+      widget.children.length,
+      (i) => i == widget.index,
+    );
+  }
 
   @override
   void didUpdateWidget(LazyIndexedStack oldWidget) {
