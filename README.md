@@ -19,7 +19,7 @@ The `LazyIndexedStack` API is the same as `IndexedStack`. A basic implementation
 
 ## Example
 
-<a href="https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart"><img src="https://raw.githubusercontent.com/marcossevilla/lazy_indexed_stack/main/art/lazy_indexed_stack.gif" height="400" width="400"/></a>
+<a href="https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart"><img src="https://raw.githubusercontent.com/marcossevilla/lazy_indexed_stack/main/art/lazy_indexed_stack.gif" height="400" width="250"/></a>
 
 ```dart
 class HomePage extends StatefulWidget {
