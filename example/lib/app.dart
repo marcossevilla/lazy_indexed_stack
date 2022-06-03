@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_indexed_stack/lazy_indexed_stack.dart';
+import 'package:flutter_lazy_indexed_stack/flutter_lazy_indexed_stack.dart';
 
 /// {@template example_app}
 /// A simple example app that shows how to use [LazyIndexedStack].

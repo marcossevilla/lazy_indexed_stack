@@ -11,7 +11,7 @@ dependencies:
   cupertino_icons: ^1.0.4
   flutter:
     sdk: flutter
-  lazy_indexed_stack:
+  flutter_lazy_indexed_stack:
     path: ../
 
 dev_dependencies:
