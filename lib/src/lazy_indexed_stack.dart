@@ -8,7 +8,7 @@ class LazyIndexedStack extends StatefulWidget {
   const LazyIndexedStack({
     super.key,
     this.index = 0,
-    this.children = const <Widget>[],
+    this.children = const [],
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.sizing = StackFit.loose,
