@@ -1,4 +1,4 @@
-name: lazy_indexed_stack
+name: flutter_lazy_indexed_stack
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
