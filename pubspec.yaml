@@ -1,5 +1,5 @@
 name: flutter_lazy_indexed_stack
-description: A Flutter package that exposes a `IndexedStack` that can be lazily loaded.
+description: A Flutter package that exposes an `IndexedStack` that can be lazily loaded.
 version: 0.0.3
 homepage: https://github.com/marcossevilla/lazy_indexed_stack
 repository: https://github.com/marcossevilla/lazy_indexed_stack
