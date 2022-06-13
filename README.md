@@ -1,10 +1,11 @@
 # Lazy Indexed Stack 😴🥞
 
+[![pub][pub_dev_badge]][pub_dev_link]
 [![ci][ci_badge]][ci_link]
 [![License: MIT][license_badge]][license_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 
-A Flutter package that exposes a `IndexedStack` that can be lazily loaded.
+A Flutter package that exposes an `IndexedStack` that can be lazily loaded.
 
 `IndexedStack` is a widget that shows its children one at a time, preserving the state of all the children. But it renders all the children at once.
 
@@ -82,5 +83,7 @@ Refer to the [example][example_link] to see the usage of `LazyIndexedStack`.
 [example_link]: https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
+[pub_dev_badge]: https://img.shields.io/pub/v/flutter_lazy_indexed_stack.svg
+[pub_dev_link]: https://pub.dev/packages/flutter_lazy_indexed_stack
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
