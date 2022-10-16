@@ -53,10 +53,7 @@ class _LazyIndexedStackState extends State<LazyIndexedStack> {
 
   void _activateChild(int? index) {
     if (index == null) return;
-
-    if (!_activatedChildren[index]) {
-      setState(() => _activatedChildren[index] = true);
-    }
+    if (!_activatedChildren[index]) _activatedChildren[index] = true;
   }
 
   List<Widget> get children {
