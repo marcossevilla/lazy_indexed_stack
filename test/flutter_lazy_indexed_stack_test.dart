@@ -4,7 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lazy_indexed_stack/flutter_lazy_indexed_stack.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../helpers/helpers.dart';
+extension AppTester on WidgetTester {
+  Future<void> bootstrap(Widget widgetUnderTest) async {
+    await pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: widgetUnderTest,
+        ),
+      ),
+    );
+  }
+}
 
 void main() {
   group('LazyIndexedStack', () {
@@ -15,7 +25,7 @@ void main() {
     testWidgets('only renders default index', (tester) async {
       const lazyIndexedStackKey = Key('lazyIndexedStackKey');
 
-      await tester.pumpApp(
+      await tester.bootstrap(
         LazyIndexedStack(
           key: lazyIndexedStackKey,
           children: const [
@@ -36,7 +46,8 @@ void main() {
       'changes current index and renders activated children',
       (tester) async {
         var index = 0;
-        await tester.pumpApp(
+
+        await tester.bootstrap(
           StatefulBuilder(
             builder: (context, setState) {
               return LazyIndexedStack(
@@ -53,7 +64,8 @@ void main() {
           ),
         );
         await tester.tap(find.byType(ElevatedButton));
-        await tester.pump();
+        await tester.pumpAndSettle();
+
         expect(find.text('page1'), findsOneWidget);
         expect(find.text('page2'), findsOneWidget);
         expect(find.text('page3'), findsNothing);
