@@ -1,3 +1,9 @@
+#  0.0.4
+
+- chore: upgrade to flutter 3.3.5
+- chore: remove redundant setState
+- docs: add pub.dev badge and nits
+
 #  0.0.3
 
 - chore: rename package to `flutter_lazy_indexed_stack`
