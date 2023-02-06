@@ -29,7 +29,10 @@ class ExampleApp extends StatelessWidget {
 /// {@endtemplate}
 class ExampleHomePage extends StatefulWidget {
   /// {@macro example_home_page}
-  const ExampleHomePage({super.key, required this.title});
+  const ExampleHomePage({
+    required this.title,
+    super.key,
+  });
 
   /// This class is the configuration for the state.
   /// It holds the values (in this case the title)
@@ -91,7 +94,10 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
 /// {@endtemplate}
 class ExamplePage extends StatefulWidget {
   /// {@macro example_page}
-  const ExamplePage({super.key, required this.index});
+  const ExamplePage({
+    required this.index,
+    super.key,
+  });
 
   /// The index of the page.
   ///
