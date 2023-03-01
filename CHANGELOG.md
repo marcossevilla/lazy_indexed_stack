@@ -1,3 +1,9 @@
+#  0.0.5
+
+- chore(deps): upgrade to very_good_analysis 4.0.0
+- chore: update CODEOWNERS
+- chore(deps): upgrade to flutter 3.7.0
+
 #  0.0.4
 
 - chore: upgrade to flutter 3.3.5
