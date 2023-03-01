@@ -120,7 +120,7 @@ class _ExamplePageState extends State<ExamplePage> {
     Future.delayed(
       ExamplePage.displayTimeDelay,
       () {
-        if (mounted) {
+        if (context.mounted) {
           setState(() {
             _displayTime = DateTime.now().subtract(
               ExamplePage.displayTimeDelay,
