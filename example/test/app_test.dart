@@ -21,8 +21,10 @@ void main() {
     testWidgets(
       'renders LazyIndexedStack with one example page by default',
       (tester) async {
-        await tester.pumpApp(const ExampleHomePage(title: homePageTitle));
-        await tester.pump(ExamplePage.displayTimeDelay);
+        await tester.pumpApp(
+          const ExampleHomePage(title: homePageTitle),
+          ExamplePage.displayTimeDelay,
+        );
 
         expect(find.text(homePageTitle), findsOneWidget);
         expect(find.byType(LazyIndexedStack), findsOneWidget);
@@ -32,8 +34,10 @@ void main() {
     );
 
     testWidgets('changes index and renders a new example page', (tester) async {
-      await tester.pumpApp(const ExampleHomePage(title: homePageTitle));
-      await tester.pump(ExamplePage.displayTimeDelay);
+      await tester.pumpApp(
+        const ExampleHomePage(title: homePageTitle),
+        ExamplePage.displayTimeDelay,
+      );
       await tester.tap(find.byIcon(Icons.filter_3));
       await tester.pumpAndSettle();
 
@@ -44,8 +48,10 @@ void main() {
   group('ExamplePage', () {
     testWidgets('renders correct index', (tester) async {
       const index = 1;
-      await tester.pumpApp(const ExamplePage(index: index));
-      await tester.pump(ExamplePage.displayTimeDelay);
+      await tester.pumpApp(
+        const ExamplePage(index: index),
+        ExamplePage.displayTimeDelay,
+      );
 
       expect(find.text('This is page $index'), findsOneWidget);
     });

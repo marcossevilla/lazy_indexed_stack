@@ -15,7 +15,7 @@ class LazyIndexedStack extends StatefulWidget {
   });
 
   /// The index of the child to display.
-  final int? index;
+  final int index;
 
   /// The list of children that can be displayed.
   final List<Widget> children;
