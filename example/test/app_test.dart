@@ -41,7 +41,10 @@ void main() {
       await tester.tap(find.byIcon(Icons.filter_3));
       await tester.pumpAndSettle();
 
-      expect(find.byType(ExamplePage), findsNWidgets(2));
+      expect(
+        find.byType(ExamplePage, skipOffstage: false),
+        findsNWidgets(2),
+      );
     });
   });
 

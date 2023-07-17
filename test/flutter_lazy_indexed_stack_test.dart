@@ -66,7 +66,7 @@ void main() {
         await tester.tap(find.byType(ElevatedButton));
         await tester.pumpAndSettle();
 
-        expect(find.text('page1'), findsOneWidget);
+        expect(find.text('page1', skipOffstage: false), findsOneWidget);
         expect(find.text('page2'), findsOneWidget);
         expect(find.text('page3'), findsNothing);
       },
