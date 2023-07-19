@@ -1,3 +1,7 @@
+#  0.0.6
+
+- chore(deps): upgrade to flutter 3.10.0
+
 #  0.0.5
 
 - chore(deps): upgrade to very_good_analysis 4.0.0
