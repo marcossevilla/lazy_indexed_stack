@@ -6,10 +6,5 @@ on:
       - main
 
 jobs:
-  semantic_pull_request:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Semantic Pull Request
-        uses: amannn/action-semantic-pull-request@v4.5.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1

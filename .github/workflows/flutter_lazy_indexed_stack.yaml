@@ -16,7 +16,7 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
-      flutter_version: 3.24.5
+      flutter_version: 3.32.0
 
   pana:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
         run: |
           flutter packages get
           flutter pub global activate pana
-          
+
       - name: Verify Pub Score
         run: |
           PANA=$(pana . --no-warning); PANA_SCORE=$(echo $PANA | sed -n "s/.*Points: \([0-9]*\)\/\([0-9]*\)./\1\/\2/p")

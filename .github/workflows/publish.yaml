@@ -1,0 +1,14 @@
+name: Publish Flutter Lazy Indexed Stack
+
+on:
+  push:
+    tags:
+      - "flutter_lazy_indexed_stack-v*.*.*"
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_pub_publish.yml@v1
+    with:
+      flutter_channel: "stable"
+      flutter_version: "3.32.0"
+      working_directory: "packages/lazy_indexed_stack"
