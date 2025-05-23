@@ -18,20 +18,19 @@ void main() {
   group('ExampleHomePage', () {
     const homePageTitle = 'Example';
 
-    testWidgets(
-      'renders LazyIndexedStack with one example page by default',
-      (tester) async {
-        await tester.pumpApp(
-          const ExampleHomePage(title: homePageTitle),
-          ExamplePage.displayTimeDelay,
-        );
+    testWidgets('renders LazyIndexedStack with one example page by default', (
+      tester,
+    ) async {
+      await tester.pumpApp(
+        const ExampleHomePage(title: homePageTitle),
+        ExamplePage.displayTimeDelay,
+      );
 
-        expect(find.text(homePageTitle), findsOneWidget);
-        expect(find.byType(LazyIndexedStack), findsOneWidget);
-        expect(find.byType(ExamplePage), findsOneWidget);
-        expect(find.byType(BottomNavigationBar), findsOneWidget);
-      },
-    );
+      expect(find.text(homePageTitle), findsOneWidget);
+      expect(find.byType(LazyIndexedStack), findsOneWidget);
+      expect(find.byType(ExamplePage), findsOneWidget);
+      expect(find.byType(BottomNavigationBar), findsOneWidget);
+    });
 
     testWidgets('changes index and renders a new example page', (tester) async {
       await tester.pumpApp(
@@ -41,10 +40,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.filter_3));
       await tester.pumpAndSettle();
 
-      expect(
-        find.byType(ExamplePage, skipOffstage: false),
-        findsNWidgets(2),
-      );
+      expect(find.byType(ExamplePage, skipOffstage: false), findsNWidgets(2));
     });
   });
 
