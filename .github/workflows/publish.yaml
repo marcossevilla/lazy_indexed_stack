@@ -11,4 +11,3 @@ jobs:
     with:
       flutter_channel: "stable"
       flutter_version: "3.32.0"
-      working_directory: "packages/lazy_indexed_stack"
