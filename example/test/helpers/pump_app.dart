@@ -7,13 +7,7 @@ extension AppTester on WidgetTester {
     Duration? duration,
     EnginePhase phase = EnginePhase.sendSemanticsUpdate,
   ]) async {
-    await pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          body: widgetUnderTest,
-        ),
-      ),
-    );
+    await pumpWidget(MaterialApp(home: Scaffold(body: widgetUnderTest)));
     await pump(duration, phase);
   }
 }

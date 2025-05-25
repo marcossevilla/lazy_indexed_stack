@@ -29,10 +29,7 @@ class ExampleApp extends StatelessWidget {
 /// {@endtemplate}
 class ExampleHomePage extends StatefulWidget {
   /// {@macro example_home_page}
-  const ExampleHomePage({
-    required this.title,
-    super.key,
-  });
+  const ExampleHomePage({required this.title, super.key});
 
   /// This class is the configuration for the state.
   /// It holds the values (in this case the title)
@@ -54,9 +51,7 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Column(
         children: [
           Expanded(
@@ -69,18 +64,9 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
             currentIndex: index,
             onTap: changeIndex,
             items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.filter_1),
-                label: '1',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.filter_2),
-                label: '2',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.filter_3),
-                label: '3',
-              ),
+              BottomNavigationBarItem(icon: Icon(Icons.filter_1), label: '1'),
+              BottomNavigationBarItem(icon: Icon(Icons.filter_2), label: '2'),
+              BottomNavigationBarItem(icon: Icon(Icons.filter_3), label: '3'),
             ],
           ),
         ],
@@ -94,10 +80,7 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
 /// {@endtemplate}
 class ExamplePage extends StatefulWidget {
   /// {@macro example_page}
-  const ExamplePage({
-    required this.index,
-    super.key,
-  });
+  const ExamplePage({required this.index, super.key});
 
   /// The index of the page.
   ///
@@ -117,18 +100,13 @@ class _ExamplePageState extends State<ExamplePage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      ExamplePage.displayTimeDelay,
-      () {
-        if (context.mounted) {
-          setState(() {
-            _displayTime = DateTime.now().subtract(
-              ExamplePage.displayTimeDelay,
-            );
-          });
-        }
-      },
-    );
+    Future.delayed(ExamplePage.displayTimeDelay, () {
+      if (context.mounted) {
+        setState(() {
+          _displayTime = DateTime.now().subtract(ExamplePage.displayTimeDelay);
+        });
+      }
+    });
   }
 
   @override
@@ -145,9 +123,7 @@ class _ExamplePageState extends State<ExamplePage> {
         if (_displayTime == null)
           const Spacer()
         else
-          Expanded(
-            child: Text('initState() ran at $_displayTime'),
-          ),
+          Expanded(child: Text('initState() ran at $_displayTime')),
       ],
     );
   }

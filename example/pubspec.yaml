@@ -1,11 +1,11 @@
 name: example
-description: A example project for `package:lazy_indexed_stack`.
-publish_to: 'none'
+description: A example project for `package:flutter_lazy_indexed_stack`.
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.5.0 <4.0.0"
-  flutter: ">=3.24.5"
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
 
 dependencies:
   flutter:
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  very_good_analysis: ^6.0.0
+  very_good_analysis: ^7.0.0
 
 flutter:
   uses-material-design: true
