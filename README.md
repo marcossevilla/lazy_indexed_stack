@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
 Refer to the [example][example_link] to see the usage of `LazyIndexedStack`.
 
 [ci_badge]: https://github.com/marcossevilla/lazy_indexed_stack/workflows/lazy_indexed_stack/badge.svg
-[ci_link]: https://github.com/marcossevilla/lazy_indexed_stack/actions
+[ci_link]: https://github.com/marcossevilla/lazy_indexed_stack/actions/workflows/flutter_lazy_indexed_stack.yaml
 [example_link]: https://github.com/marcossevilla/lazy_indexed_stack/blob/main/example/lib/app.dart
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT

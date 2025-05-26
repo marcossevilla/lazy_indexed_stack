@@ -1,3 +1,8 @@
+#  0.0.7
+
+- chore(deps): upgrade to flutter 3.32.0
+- chore(deps): upgrade to flutter 3.24.5
+
 #  0.0.6
 
 - chore(deps): upgrade to flutter 3.10.0
