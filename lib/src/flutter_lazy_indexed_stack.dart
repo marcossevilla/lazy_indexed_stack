@@ -38,23 +38,23 @@ class LazyIndexedStack extends StatefulWidget {
 }
 
 class _LazyIndexedStackState extends State<LazyIndexedStack> {
-  late final _activatedChildren = {widget.index};
+  late final Set<int> activatedChildren = {widget.index};
 
   @override
   void didUpdateWidget(LazyIndexedStack oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.index != widget.index) _activateChild(widget.index);
+    if (oldWidget.index != widget.index) activateChild(widget.index);
   }
 
-  void _activateChild(int? index) {
+  void activateChild(int? index) {
     if (index == null) return;
-    if (!_activatedChildren.contains(index)) _activatedChildren.add(index);
+    if (!activatedChildren.contains(index)) activatedChildren.add(index);
   }
 
   List<Widget> get children {
     return List.generate(
       widget.children.length,
-      (i) => _activatedChildren.contains(i)
+      (i) => activatedChildren.contains(i)
           ? widget.children[i]
           : const SizedBox.shrink(),
     );
