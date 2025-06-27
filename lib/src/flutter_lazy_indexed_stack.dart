@@ -12,6 +12,7 @@ class LazyIndexedStack extends StatefulWidget {
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.sizing = StackFit.loose,
+    this.clipBehavior = Clip.hardEdge,
   });
 
   /// The index of the child to display.
@@ -29,21 +30,15 @@ class LazyIndexedStack extends StatefulWidget {
   /// How to size the non-positioned children in the stack.
   final StackFit sizing;
 
+  /// How the content will be clipped when they extend beyond the boundaries.
+  final Clip clipBehavior;
+
   @override
   State<LazyIndexedStack> createState() => _LazyIndexedStackState();
 }
 
 class _LazyIndexedStackState extends State<LazyIndexedStack> {
-  late final List<bool> _activatedChildren;
-
-  @override
-  void initState() {
-    super.initState();
-    _activatedChildren = List.generate(
-      widget.children.length,
-      (i) => i == widget.index,
-    );
-  }
+  late final _activatedChildren = {widget.index};
 
   @override
   void didUpdateWidget(LazyIndexedStack oldWidget) {
@@ -53,24 +48,26 @@ class _LazyIndexedStackState extends State<LazyIndexedStack> {
 
   void _activateChild(int? index) {
     if (index == null) return;
-    if (!_activatedChildren[index]) _activatedChildren[index] = true;
+    if (!_activatedChildren.contains(index)) _activatedChildren.add(index);
   }
 
   List<Widget> get children {
-    return List.generate(widget.children.length, (i) {
-      return _activatedChildren[i]
+    return List.generate(
+      widget.children.length,
+      (i) => _activatedChildren.contains(i)
           ? widget.children[i]
-          : const SizedBox.shrink();
-    });
+          : const SizedBox.shrink(),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return IndexedStack(
-      alignment: widget.alignment,
-      textDirection: widget.textDirection,
-      sizing: widget.sizing,
       index: widget.index,
+      sizing: widget.sizing,
+      alignment: widget.alignment,
+      clipBehavior: widget.clipBehavior,
+      textDirection: widget.textDirection,
       children: children,
     );
   }
