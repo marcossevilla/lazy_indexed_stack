@@ -46,8 +46,7 @@ class _LazyIndexedStackState extends State<LazyIndexedStack> {
     if (oldWidget.index != widget.index) activateChild(widget.index);
   }
 
-  void activateChild(int? index) {
-    if (index == null) return;
+  void activateChild(int index) {
     if (!activatedChildren.contains(index)) activatedChildren.add(index);
   }
 
