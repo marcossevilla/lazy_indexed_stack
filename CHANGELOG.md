@@ -1,3 +1,7 @@
+# 0.0.8
+
+- fix(#23): change `List` to `Set` for `_activatedChildren`
+
 #  0.0.7
 
 - chore(deps): upgrade to flutter 3.32.0
