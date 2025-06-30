@@ -1,7 +1,8 @@
 # 0.1.0
 
-- chore: bump very_good_analysis to 9.0.0 ([#30](https://github.com/marcossevilla/lazy_indexed_stack/issues/30))
-- fix: optimize children activation with Set ([#29](https://github.com/marcossevilla/lazy_indexed_stack/issues/29))
+- ci: update publish workflow ([#32](https://github.com/marcossevilla/lazy_indexed_stack/pull/32))
+- chore: bump very_good_analysis to 9.0.0 ([#30](https://github.com/marcossevilla/lazy_indexed_stack/pull/30))
+- fix: optimize children activation with Set ([#29](https://github.com/marcossevilla/lazy_indexed_stack/pull/29))
 
 # 0.0.7
 
