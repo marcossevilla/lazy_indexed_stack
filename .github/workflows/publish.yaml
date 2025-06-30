@@ -6,10 +6,25 @@ on:
       - "flutter_lazy_indexed_stack-v*.*.*"
 
 jobs:
-  build:
+  publish:
     permissions:
       id-token: write
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_pub_publish.yml@v1
-    with:
-      flutter_channel: "stable"
-      flutter_version: "3.32.0"
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.32.0
+          cache: true
+
+      - name: 📦 Install Dependencies
+        run: flutter pub get
+
+      - name: 🌵 Dry Run
+        run: flutter pub publish --dry-run
+
+      - name: 📢 Publish
+        run: flutter pub publish -f
