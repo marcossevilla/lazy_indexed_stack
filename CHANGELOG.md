@@ -1,7 +1,7 @@
 # 0.1.0
 
 - chore: bump very_good_analysis to 9.0.0 ([#30](https://github.com/marcossevilla/lazy_indexed_stack/issues/30))
-- fix: optimize children activation with Set ([#29](https://github.com/marcossevilla/lazy_indexed_stack/issues/29)) ([2b6a992](https://github.com/marcossevilla/lazy_indexed_stack/commit/2b6a9920ae043df4956ac578d9cde78a225b2a37))
+- fix: optimize children activation with Set ([#29](https://github.com/marcossevilla/lazy_indexed_stack/issues/29))
 
 # 0.0.7
 
